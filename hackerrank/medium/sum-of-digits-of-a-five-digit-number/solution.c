@@ -3,28 +3,19 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() 
-{
-    int a, b;
-    scanf("%d\n%d", &a, &b);
+int main() {
     
-    // Array of string representations for numbers 1 to 9
-    char *words[] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-
-    // Loop through the interval [a, b]
-    for (int i = a; i <= b; i++) {
-        if (i >= 1 && i <= 9) {
-            // Print the word corresponding to the digit
-            printf("%s\n", words[i - 1]);
-        } else if (i > 9) {
-            // Check if the number is even or odd
-            if (i % 2 == 0) {
-                printf("even\n");
-            } else {
-                printf("odd\n");
-            }
-        }
+    int n;
+    scanf("%d", &n);
+    
+    // Complete the code to calculate the sum of the five digits on n.
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;  // Get the last digit and add it to sum
+        n /= 10;        // Remove the last digit from n
     }
-
+    
+    printf("%d\n", sum);
+    
     return 0;
 }
